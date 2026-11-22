@@ -1,8 +1,7 @@
-// Tiny stack VM for make.fun tiny-stack-vm-01-run-20261122.
-// Implements the kit's tiny stack ISA v1 from its spec: 32-bit wrapping ints,
-// 256-value data stack, 64-deep call stack, 256 words of memory, ten traps,
-// 1,000,000-step and 65,536-byte output limits. Runs every instance in
-// /input/<id>/ and writes /output/<id>/stdout.bin + /output/<id>/exit.txt.
+// Tiny stack VM (ISA v1) for make.fun tiny-stack-vm-01-run-20261122.
+// 32-bit wrapping ints, 256-value stack, 64-deep call stack, 256 words of
+// memory, ten traps, 1M-step and 64K-output limits. Reads /input/<id>/,
+// writes /output/<id>/stdout.bin + /output/<id>/exit.txt.
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 
 const NEED: Record<number, [number, number]> = {
